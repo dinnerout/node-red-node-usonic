@@ -1,0 +1,76 @@
+<!--
+  Copyright 2016 Fork Unstable Media
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<script type="text/x-red" data-template-name="rpi-usonic">
+    <div class="form-row">
+        <label for="node-input-signal"><i class="fa fa-circle"></i> Signal Pin</label>
+        <input type="text" id="node-input-signal" placeholder="Signal Pin">
+    </div>
+    <br/>
+    <div class="form-row">
+        <label for="node-input-hit"><i class="fa fa-circle"></i> Hit Distance</label>
+        <input type="text" id="node-input-hit" placeholder="Hit Distance" value="25.0">
+    </div>
+    <br/>
+    <div class="form-row">
+        <label for="node-input-maxrange"><i class="fa fa-circle"></i> Maximum Range</label>
+        <input type="text" id="node-input-maxrange" placeholder="Maximum Range" value="60.0">
+    </div>
+    <br/>
+    <div class="form-row">
+        <label for="node-input-hitsleep"><i class="fa fa-circle"></i> Hit Sleep</label>
+        <input type="text" id="node-input-hitsleep" placeholder="Hit Sleep" value="0.5">
+    </div>
+    <br/>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-tips"><b>Tip</b>: Signal Pin No. must given as Pin number like "32".
+    NOt GPIO-Pin names like "GPIO12" ( Pin number would be 32 )</div>
+</script>
+
+<script type="text/x-red" data-help-name="rpi-usonic">
+    <p>Raspberry Pi input from an Grove Ultrasonic ranger.</p>
+    <p>Outputs a <code>msg.payload</code> with a number representing the range in cm.</p>
+    <!--
+    <p>Produces one measure every 0.5s - but only if the distance is different from the previous reading.</p>
+    <p><b>Note:</b> we are using the actual physical pin numbers on connector P1 as they are easier to locate.</p>
+    -->
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('rpi-usonic',{
+        category: 'Raspberry Pi',
+        color:"#c6dbef",
+        defaults: {
+            name: { value:"" },
+            signal: { value:"", required:true, validate:RED.validators.regex(/^\d+$/) },
+            hit: { value:"25.0", required:true, validate:RED.validators.regex(/^[+-]?\d+(\.\d+)?$/) },
+            maxrange: { value:"60.0", required:true, validate:RED.validators.regex(/^[+-]?\d+(\.\d+)?$/) },
+            hitsleep: { value:"0.5", required:true, validate:RED.validators.regex(/^[+-]?\d+(\.\d+)?$/) }
+        },
+        inputs:0,
+        outputs:1,
+        icon:"rpi.png",
+        label:function() {
+            return this.name||"Pi USonic";
+        },
+        labelStyle:function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>

@@ -1,0 +1,23 @@
+{
+    "name"          : "node-red-grove-usonic",
+    "version"       : "0.0.1",
+    "description"   : "A Node-RED node for a Raspberry Pi to use an Grove Ultrasonic Ranger",
+    "dependencies"  : {
+    },
+    "repository" : {
+        "type":"git",
+        "url":"https://github.com/node-red/node-red-nodes/tree/master/hardware/PiSrf"
+    },
+    "license": "Apache-2.0",
+    "keywords": [ "node-red", "grove", "ultrasonic", "range" ],
+    "node-red"      : {
+        "nodes"     : {
+            "rpi-usonic": "usonic.js"
+        }
+    },
+    "author": {
+        "name": "Sebastian Martens",
+        "email": "smartens@fork.de",
+        "url": "http://nodered.org"
+    }
+}
