@@ -42,10 +42,11 @@ module.exports = function(RED) {
         this.signal = n.signal;
         this.hitrange = n.hit;
         this.maxrange = n.maxrange;
+        this.minrange = n.minrange;        
         this.hitsleep = n.hitsleep;
 
         var node = this;
-        var paramStr = node.signal+","+this.hitrange+","+this.maxrange+","+this.hitsleep;
+        var paramStr = node.signal+","+this.hitrange+","+this.maxrange+","+this.minrange+","+this.hitsleep;
 
         if (node.signal !== undefined) {
             node.child = spawn(gpioCommand, [paramStr]);

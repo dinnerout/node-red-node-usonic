@@ -71,7 +71,7 @@ def Measure():
 # Main program loop
 if len(sys.argv) > 1:
     arguments = sys.argv[1].lower().split(',')
-    if len(arguments) != 4:
+    if len(arguments) != 5:
         print "Bad number of arguments supplied"
         print arguments
         sys.exit(0)
@@ -79,7 +79,8 @@ if len(sys.argv) > 1:
     GPIO_SIG        = int(arguments[0])
     HIT_DISTANCE    = float(arguments[1])
     MAX_DISTANCE    = float(arguments[2])
-    HIT_CALL_SLEEP  = float(arguments[3])
+    MIN_DISTANCE    = float(arguments[3])    
+    HIT_CALL_SLEEP  = float(arguments[4])
 
     GPIO.setmode(GPIO.BOARD)        # Use GPIO BOARD numbers
 
@@ -104,5 +105,5 @@ if len(sys.argv) > 1:
 
 else:
     print "Bad params"
-    print "    sudo usonic.py signal,hit_distance,max_distance,hit_sleep"
+    print "    sudo usonic.py signal,hit_distance,max_distance,min_distance,hit_sleep"
     sys.exit(0)

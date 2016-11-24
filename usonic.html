@@ -31,6 +31,11 @@
     </div>
     <br/>
     <div class="form-row">
+        <label for="node-input-minrange"><i class="fa fa-circle"></i> Minimum Range</label>
+        <input type="text" id="node-input-minrange" placeholder="Minimum Range" value="0.5">
+    </div>
+    <br/>
+    <div class="form-row">
         <label for="node-input-hitsleep"><i class="fa fa-circle"></i> Hit Sleep</label>
         <input type="text" id="node-input-hitsleep" placeholder="Hit Sleep" value="0.5">
     </div>
@@ -61,6 +66,7 @@
             signal: { value:"", required:true, validate:RED.validators.regex(/^\d+$/) },
             hit: { value:"25.0", required:true, validate:RED.validators.regex(/^[+-]?\d+(\.\d+)?$/) },
             maxrange: { value:"60.0", required:true, validate:RED.validators.regex(/^[+-]?\d+(\.\d+)?$/) },
+            minrange: { value:"0.5", required:true, validate:RED.validators.regex(/^[+-]?\d+(\.\d+)?$/) },            
             hitsleep: { value:"0.5", required:true, validate:RED.validators.regex(/^[+-]?\d+(\.\d+)?$/) }
         },
         inputs:0,
