@@ -1,7 +1,6 @@
 # node-red-grove-usonic
 
-A <a href="http://nodered.org" target="_new">Node-RED</a> node for Raspberry Pi
-to read range from an Grove Ultrasonic range sensor.
+A <a href="http://nodered.org" target="_new">Node-RED</a> node for Raspberry Pi to read range from an Grove Ultrasonic range sensor. Read full description here: <a href="http://blog.sebastian-martens.de/technology/use-grove-ultrasonic-sensor-for-motion-detection-within-node-red/">http://blog.sebastian-martens.de/technology/use-grove-ultrasonic-sensor-for-motion-detection-within-node-red/</a>
 
 **Only** works with a Raspberry Pi.
 
