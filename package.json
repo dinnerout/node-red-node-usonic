@@ -6,7 +6,7 @@
     },
     "repository" : {
         "type":"git",
-        "url":"https://github.com/node-red/node-red-nodes/tree/master/hardware/PiSrf"
+        "url":"https://github.com/dinnerout/node-red-node-usonic"
     },
     "license": "Apache-2.0",
     "keywords": [ "node-red", "grove", "ultrasonic", "range" ],
